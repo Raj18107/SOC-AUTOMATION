@@ -6,29 +6,40 @@
 
 ## Project Summary
 
-I designed and built the automated response core of this SOC homelab as part of a four-person team project at Offenso Hackers Academy. My work covers the system's risk logic and remediation engine: a custom risk engine that scores Wazuh alerts from 0–100 and classifies them into ten attack categories, ten response playbooks that route each category to the correct remediation, an SSH-based action engine that executes and verifies those remediations on a target host, and a human-approval workflow that pauses high-risk actions for analyst review before anything destructive runs. I also handled the Wazuh deployment and REST API integration, and used Kali Linux to simulate real attacks — SSH brute-force, file integrity violations — to test and validate the entire pipeline end-to-end.
+As part of a collaborative SOC Automation project at Offenso Hackers Academy, I designed and developed the SOC Analyst Dashboard using Streamlit. My primary responsibility was building an interactive dashboard that enables security analysts to monitor alerts, incidents, risk scores, and system activity from a single interface.
+
+I integrated the dashboard with the project's backend modules, including the Wazuh API, risk scoring engine, incident database, and automation pipeline, allowing real-time visualization of security events and incident status. I also tested and refined the dashboard to ensure smooth integration, accurate data presentation, and an intuitive user experience for SOC analysts.
 
 ---
 
 ## My Contributions
 
-This was a four-person team project. Here's the breakdown of what I personally designed and built, versus work done by teammates — included so the README accurately reflects individual ownership.
+This was a collaborative team project. The breakdown below reflects my individual contributions and the other major project components to accurately represent ownership.
 
-**Designed and implemented by me** (Python implementation built with AI-assisted development; design, integration, testing, and debugging done by me):
+### Designed and implemented by me
+
+- Designed and developed the Streamlit-based SOC Analyst Dashboard (`dashboard.py`).
+- Built an interactive interface for monitoring security alerts, incidents, risk scores, and system activity.
+- Developed dashboard pages for real-time alert monitoring, incident management, and security event visualization.
+- Integrated the dashboard with the project's backend modules, including the Wazuh API, risk scoring engine, SQLite database, and automation pipeline.
+- Implemented interactive tables, charts, filters, and reporting features to improve the SOC analyst workflow.
+- Tested, debugged, and refined the dashboard to ensure accurate data visualization and seamless integration with the complete SOC automation system.
+
+### Built by teammates
+
+The overall SOC Automation platform also includes:
+
 - Wazuh deployment and Manager/Agent integration
-- Wazuh REST API integration (`wazuh_api.py`) — alert retrieval, authentication, pagination
+- Wazuh REST API integration (`wazuh_api.py`)
 - Pipeline orchestration (`main_pipeline.py`)
-- Risk scoring engine (`risk_engine.py`) — weighted 0–100 scoring, 10-category classification
-- Response playbooks for Groups A–J (`playbook_groupA.py`, `playbook_groupB.py`, `playbook_groupCDEFGHIJ.py`)
-- Action engine (`action_engine.py`) — SSH-based remote command execution via Paramiko
-- Post-fix verification logic (`post_fix_checks.py`)
-- Attack simulation, testing, and troubleshooting (Kali Linux against the Ubuntu target)
+- Risk scoring engine (`risk_engine.py`)
+- Automated response playbooks (`playbook_groupA.py`, `playbook_groupB.py`, `playbook_groupCDEFGHIJ.py`)
+- SSH-based action engine (`action_engine.py`)
+- Post-remediation verification (`post_fix_checks.py`)
+- SQLite database implementation (`database.py`)
+- Attack simulation, testing, and validation
 
-**Built by teammates:**
-- Streamlit dashboard (`dashboard.py`)
-- SQLite database design and `DatabaseManager` class (`database.py`)
-
-The full project is included here for context and to show how my components fit into the larger system — but the breakdown above is the accurate picture of individual ownership.
+The complete project is included in this repository to demonstrate how the dashboard integrates with the end-to-end SOC automation workflow, while the breakdown above accurately represents my individual contribution.
 
 ---
 
@@ -201,5 +212,5 @@ This project is licensed under the MIT License — see [LICENSE](LICENSE) for de
 
 ## Contact
 
-amaldileef25@gmail.com
-www.linkedin.com/in/amal-dileef
+pratapsreeraj@gmail.com
+www.linkedin.com/in/pratap-sreeraj
